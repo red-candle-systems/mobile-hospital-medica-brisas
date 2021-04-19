@@ -56,7 +56,7 @@ export default {
   },
   created() {
     setTimeout(this.cargarState, 1);
-    console.log("created", this.Equipos);
+    //console.log("created", this.Equipos);
     this.Flags.currentRoute = "/Calendar";
   },
   destroyed() {
@@ -103,7 +103,7 @@ export default {
         "-" +
         new Date().getDate().toString();
 
-      console.log(this.date);
+      //console.log(this.date);
       //buscamos solo las fechas de los equipos
       for (var i = 0; i < this.Equipos.length; i++) {
         //console.log(this.Equipos[i].Siguiente_Mantenimiento);

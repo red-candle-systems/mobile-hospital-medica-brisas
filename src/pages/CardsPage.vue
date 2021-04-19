@@ -101,7 +101,6 @@ export default {
     async refreshEquipos(done) {
       await this.$store.dispatch("cardState/getEquipmentsAction");
       done();
-      console.log("ya termino")
     },
   },
 

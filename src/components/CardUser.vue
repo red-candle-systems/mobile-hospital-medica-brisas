@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     SelectUser(id) {
-      console.log(this.$store.state.cardState.Usuarios);
+      //console.log(this.$store.state.cardState.Usuarios);
       try {
         var userSelected = this.$store.state.cardState.Usuarios.filter(
           (user) => user.ID_Usuario == id
@@ -82,7 +82,7 @@ export default {
         this.UserSelected = userSelected;
         if (this.Usuario.rol == 3 || this.Usuario.rol == 2) {
           //No hagas nada
-          console.log(this.Usuario.id);
+         // console.log(this.Usuario.id);
           if (this.Usuario.id == id) {
             this.$router.push({ path: `/UserDetail/` });
           }

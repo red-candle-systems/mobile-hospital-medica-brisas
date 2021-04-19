@@ -199,7 +199,6 @@ export default {
           const response = await service.deleteStep(STEP.ID_Equipo);
         } else {
           if (this.BanderaActualizar) {
-            console.log("VOY A ACTUALIZAR", STEP.Pasos);
             try {
               const response = await service.updateStep(STEP);
               this.Steps = STEP.Pasos;
@@ -210,7 +209,6 @@ export default {
               this.Steps = [...STEP.Pasos];
             } catch (error) {}
 
-            console.log("VOY A CREAR");
           }
         }
         this.$q.loading.hide();

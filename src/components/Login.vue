@@ -153,7 +153,6 @@ export default {
       if (encontrado.length > 0) {
         if (encontrado[0].Estatus === true) {
           this.accept = true;
-          console.log(encontrado[0]);
           this.$store.state.global.Usuario.rol = encontrado[0].Rol;
           this.$store.state.global.Usuario.Foto = encontrado[0].Foto;
           this.$store.state.global.Usuario.id = encontrado[0].ID_Usuario;
@@ -216,9 +215,7 @@ export default {
           this.$q.loading.hide();
         }
       } catch (error) {
-        console.log("Este es el error", error);
         var errorRed = error.toString().substring(0, 12);
-        //console.log("ESTE ES EL ERROR DE RED BIEN RECORTADO", errorRed);
         if (this.errorRed.toString() === "Network Error")
           this.$q.notify({
             color: "red-14",

@@ -130,7 +130,6 @@ export default {
         if (response.data != "") {
           this.Steps = await response.data.Pasos;
           this.steps = await response.data.Pasos;
-          console.log("pasos", this.Steps);
         } else {
           this.Steps = [];
           this.steps = [];

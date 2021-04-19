@@ -16,7 +16,6 @@ export default {
     this.$q.dark.set(true);
   },
   updated() {
-    console.log(this.Usuario.rol);
     if (this.Usuario.rol == undefined) {
       if (this.$router.currentRoute.path != "/") {
         this.$router.push("/");

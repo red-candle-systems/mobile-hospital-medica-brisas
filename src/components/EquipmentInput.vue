@@ -479,7 +479,6 @@ export default {
         { value: this.$data.textEstatus, parameter: "Estatus" },
       ];
       for (var i = 0; i < SchemaEquipo.length; i++) {
-        console.log(SchemaEquipo[i].value);
         if (SchemaEquipo[i].value == "") {
           this.$q.loading.hide();
           this.$q.notify({
@@ -529,7 +528,6 @@ export default {
           Mes: mes,
           Año: new Date().getFullYear(),
         };
-        console.log(obj);
         this.MaintenanceSectionSelected = obj;
         this.ReportSectionSelected = obj;
 

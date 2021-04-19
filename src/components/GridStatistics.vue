@@ -91,9 +91,6 @@ export default {
   created() {
     ////console.log(this.referenceVariable.length)
     let fechaActual = new Date();
-    //console.log(fechaActual.getMonth() + 1);
-    //console.log(fechaActual.getFullYear());
-    //console.log(this.StatisticSectionSelected);
 
     if (
       this.StatisticSectionSelected.Mes == fechaActual.getMonth() + 1 &&

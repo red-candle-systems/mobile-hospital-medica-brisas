@@ -147,12 +147,9 @@ export default {
     };
   },
   created() {
-    console.log(this.Equipos);
     this.Equipos.forEach((e) => {
-      console.log(this.MantenimientoSelected[0].ID_Equipo, e.ID_Equipo);
       if (e.ID_Equipo == this.MantenimientoSelected[0].ID_Equipo) {
         this.ImagenEquipo = e.Foto;
-        console.log(e.Foto);
       }
     });
     this.InChargeName = this.MantenimientoSelected[0].Nombre_Encargado;

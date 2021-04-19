@@ -156,10 +156,8 @@ export default {
               f.getFullYear()
           ) {
             equipments.push(element);
-            console.log(element.Siguiente_Mantenimiento);
           }
         });
-        console.log(equipments);
         if (equipments.length > 0) this.Equipos = equipments;
         else {
           this.$q.notify({
@@ -204,18 +202,15 @@ export default {
     //Usamos el state de la ultima ruta para ver si tenemos que cargar de la api o mejor de state
     if (this.Equipos.length == 0) {
       this._getEquipos;
-      console.log("Busca en la api");
       this.Flags.currentRoute = "";
     } else {
       this.Equipos = this.EquiposAux;
-      console.log("Equipos en created", this.Equipos);
       //console.log("Busca en el state");
     }
   },
   //PARA PONER EN text (principal valor del input de buscar) DEL SEARCH LO QUE TIENE EL FILTERDROPDPOWN ACTUALMENTE
   updated() {
     this.cargarReportes;
-    //console.log("Este es el estado ", this.$store.state.global.TypeSearch);
     if (this.$store.state.global.TypeSearch === "Equipos Reportados") {
       this.text = "Equipos Reportados";
     }
@@ -226,7 +221,6 @@ export default {
   //SI HUBO UN SETEO AL STATE QUE DISMINUYA LOS EQUIPOS, LOS VUELVO A LLENAR DESDE MI ARREGLO AUXILIAR CUNADO SE DESTRUYE EL COMPONENTE
   destroyed() {
     this.Equipos = this.EquiposAux;
-    console.log("Equipos en destroyed", this.Equipos);
   },
   computed: {
     //Cragamos la lista de los reportes y los iteramos para ver cual tieene los states en true para obtener el id del equipo con un reporte
@@ -234,11 +228,9 @@ export default {
       this.Reportes.forEach((e) => {
         if (e.Status) this.IDSEQUIPOS.push(e.ID_Equipo);
       });
-      console.log(this.IDSEQUIPOS);
     },
     //METODO OBTENER TODOS LOS EQUIPOS DESDE LA API
     async _getEquipos() {
-      console.log("Cargando equipos desde la api");
       await this.$store.dispatch("cardState/getEquipmentsAction");
     },
     //STATE DE LOS EQUIPOS

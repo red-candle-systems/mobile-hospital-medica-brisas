@@ -54,7 +54,6 @@ export default {
     let fecha1 = new Date("2021/04/01"); //Fecha de inicio 2020
     let fecha2 = new Date(); //Fecha de hoy
 
-    console.log("este es el mes", fecha2.getMonth());
 
     let mes = fecha2.getMonth() + 1;
     let desc = false;
@@ -90,7 +89,6 @@ export default {
       }
       mes = 12;
     }
-    console.log(this.items);
     for (let j = mes; j > fecha1.getMonth(); j--) {
       if (color == 10 && desc == false) {
         desc = true;
@@ -122,9 +120,7 @@ export default {
 
   methods: {
     verMaintenanceTable(item) {
-      console.log("Este es el que le di click", item);
 
-      console.log(item.Mes.toString().length);
       if (item.Mes.toString().length == 1) {
         item.Mes = "0" + item.Mes.toString();
       }
@@ -133,7 +129,6 @@ export default {
         Año: item.Anio, 
       };
 
-      console.log("Este es el objt", obj);
       this.MaintenanceSectionSelected = obj;
       this.$router.push({ path: "/MaintenanceList" });
     },

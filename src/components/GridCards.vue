@@ -117,10 +117,8 @@ export default {
   computed: {
     //OBTENEMOS EL ARREGLO DE REPORTES DESDE LA API atraves de una action
     async _getReports() {
-      console.log("entraaaaaaaaaaaa a buscar reportes");
       let f = new Date();
       let mes = f.getMonth() + 1;
-      console.log(mes.toString().length);
       if (mes.toString().length == 1) mes = "0" + mes;
       var objDate = {
         Año: f.getFullYear(),

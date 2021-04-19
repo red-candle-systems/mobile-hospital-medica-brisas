@@ -622,7 +622,6 @@ export default {
         Mes: mes,
         Año: new Date().getFullYear(),
       };
-      console.log(obj);
       this.MaintenanceSectionSelected = obj;
       this.ReportSectionSelected = obj;
 

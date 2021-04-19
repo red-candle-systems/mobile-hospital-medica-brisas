@@ -211,12 +211,9 @@ export default {
   },
   created() {
     this.inicializacionVariables();
-    console.log("Las flags en el created", this.Flags);
     //Si existe un reporte verdadero y que venga de esa ruta
-    console.log(this.$store.state.global.Flags.reporte.Status);
 
     if (this.$store.state.global.Flags.reporte.Status) {
-      console.log("crear mantenimiento de reporte");
       this.createMaintenanceOfReport();
     } else {
       this.createNormalMaintenance();
@@ -324,7 +321,6 @@ export default {
         Materiales: this.Materiales,
         Cantidad: this.Cantidades,
       };
-      //console.log(mantenimiento);
       //Ponemos el loading a cargar mientras carga la respuesta de nuestra api
       this.$q.loading.show({
         spinner: QSpinnerCube,
@@ -335,7 +331,6 @@ export default {
         messageColor: "indigo-10",
       });
       try {
-        console.log("esta a punto");
         //Crear un mantenimiento
         if (this.Flags.lastRoute == "/MaintenanceList") {
           const response = await service.createMaintenance(mantenimiento);
@@ -355,7 +350,6 @@ export default {
               Dia: this.Flags.reporte.Dia,
               Status: false,
             };
-            console.log("este es el id del reporte", reporte);
             const response = await service.updateReport(reporte);
             //ACTUALIZAMOS EL STATUS TAMBIE SI ES QUE EN LA API SE HA HECHO CORRECTAMENTE
             for (var i = 0; i < this.Reportes.length; i++) {
@@ -366,7 +360,6 @@ export default {
                 };
               }
             }
-            console.log("al final", this.Reportes);
 
             this.$q.notify({
               color: "green",
@@ -388,7 +381,6 @@ export default {
           this.alert = true;
         }
       } catch (error) {
-        console.log(error);
         this.alertfalse = true;
         this.$q.loading.hide();
       }
